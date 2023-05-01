@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap" rel="stylesheet">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <h1 class="headerLogo">SPLI 
+            </h1>
+            <h1 class="headerLogo2" >TTER
+            </h1>
+            
+
+            <div ID="container">
+
+                <div class="first_box item">
+                    <h4 class="bill">bill</h4>
+
+                    <div class="bill-input-box">
+                        <span class="dollar">
+                            <strong>$</strong>
+                        </span>
+                        <input type="text" class="bill-input bill_val">
+                    </div>
+                    <h4 class="tip">select tip %</h4>
+                    <div class="percentages button_container">
+                        <button class="btn" value='5'>5%</button>
+                        <button class="btn" value='10'>10%</button>
+                        <button class="btn" value='15'>15%</button>
+                        <button class="btn" value='25'>25%</button>
+                        <button class="btn" value='50'>50%</button>
+                        <input class="btn" type="text" id="percent" placeholder="custom" style="font-size: clamp(0.5rem,2.5vw ,1rem);">
+                    </div>
+                    <div class="num_of-people-box">
+                        <h4 class="num-of-people-title  people ">Number of People</h4>
+                        <p class="none error"></p>
+
+                        <div class="bill-input-box">
+                            
+                            <img class="dollar" src="/images/icon-person.svg" alt="person">
+                            <input type="text" id="num-of-people-input" class="bill-input">
+                        </div>
+                    </div>
+                </div>
+                    <div class="total item">
+                        <div class="cima">
+                            <div class="cima2">
+                                <div>
+                                    <p>Tip amount</p>
+                                    <p>/ person</p>
+                                </div>
+                                <div>
+                                    <p>$0.00</p>
+                                </div>
+                            </div>
+                            <div class="baixo2">
+                                <div>
+                                    <p>Total</p>
+                                    <p>/ person</p>
+                                </div>
+                                <div>
+                                    <p>$0.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baixo">
+                            <button class="button-reset">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

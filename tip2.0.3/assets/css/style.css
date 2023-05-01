@@ -1,0 +1,479 @@
+/*importa da pasta  estilo de fonte*/
+@font-face {
+    font-family: 'calc';
+    src: url('../fonte/led_calc/LEDCalculator.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Space Mono', monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ### Colors */
+    --strongCyan: hsl(172, 67%, 45%);
+    /* ### Neutral */
+    --veryDarkCyan: hsl(183, 100%, 15%);
+    --darkGrayishCyan: hsl(186, 14%, 43%);
+    --grayishCyan: hsl(184, 14%, 56%);
+    --lightGrayishCyan: hsl(185, 41%, 84%);
+    --veryLightGrayishCyan: hsl(180, 33%, 94%);
+    --white: hsl(0, 0%, 100%);
+    --main-width: 50vw;
+}
+
+
+
+
+
+body {
+    min-height: 100vh;
+
+
+    font-family: 'Space Mono', monospace;
+    background-color: var(--lightGrayishCyan);
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: var(--main-width);
+    text-align: center;
+    margin: auto auto;
+    /* Define as margens superior e inferior como 0 e as laterais como "auto" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Define a altura mínima da main como 100% da viewport */
+
+    padding-top: 100px;
+}
+
+
+
+.headerLogo {
+
+    margin-bottom: 2%;
+    text-transform: uppercase;
+    color: var(--veryDarkCyan);
+    letter-spacing: 2px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    padding-bottom: 100px;
+}
+
+.headerLogo2 {
+    margin-top: 2%;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--veryDarkCyan);
+    letter-spacing: 2px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 4%;
+    padding-bottom: 100px;
+}
+
+.head span {
+    display: block;
+}
+
+#container {
+
+    place-items: center;
+    background-color: var(--white);
+    height: 80%;
+    width: 100vw;
+    max-width: 900px;
+
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px 20px;
+    /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
+    justify-content: space-between;
+}
+
+/* Define um estilo para telas menores */
+@media screen and (max-width: 700px) {
+    #container {
+        flex-direction: column;
+        /* Muda a direção do flexbox para exibição vertical */
+    }
+}
+
+/* Define um estilo para telas maiores */
+@media screen and (min-width: 701px) {
+    #container {
+        flex-direction: row;
+        /* Mantém a direção do flexbox para exibição horizontal */
+    }
+}
+
+
+
+
+
+
+
+
+.dollar {
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    transform: translate(-3%, -50%);
+    display: block;
+    font-size: 1.9rem;
+    color: var(--grayishCyan);
+}
+
+.first_box {
+    text-align: left;
+    padding: 0 1.5rem;
+    width: 60%;
+
+}
+
+
+.bill_val {
+
+    font-family: 'calc', Arial, Helvetica, sans-serif;
+}
+
+.bill,
+.people {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    text-align: start;
+    text-transform: capitalize;
+    margin: 1rem;
+    color: hsl(184, 14%, 56%);
+    height: 25px;
+
+
+
+}
+
+.bill-input-box {
+    position: relative;
+    margin-bottom: .5rem;
+    color: var(--grayishCyan);
+
+
+}
+
+
+
+/* Estilos padrão para telas maiores que 760px */
+.bill-input {
+    background-image: linear-gradient(to left, rgba(122, 231, 255, 0.736), rgba(152, 255, 248, 0.736), transparent, rgba(170, 255, 241, 0.736));
+    border: 2px solid var(hsl(186, 14%, 43%));
+    padding: 15px;
+    border-radius: 10px;
+    outline: none;
+    text-align: right;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 200;
+    color: var(--veryDarkCyan);
+    width: 60vw;
+
+    margin-bottom: 10px;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.511);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill-input input {
+    width: 90%;
+    text-align: right;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 200;
+    color: var(--veryDarkCyan);
+    outline: none;
+    border: none;
+    background: none;
+
+}
+
+/* Alterar os estilos para telas menores que 760px */
+@media (min-width: 760px) {
+    .bill-input {
+        width: 25vw;
+        margin-right: 10px;
+        /* mover a caixa de entrada mais para a direita*/
+        text-align: left;
+        text-align: right;
+        /* alinhar o texto à direita */
+
+    }
+}
+
+.bill-input:hover,
+.bill-input:focus {
+    border-color: var(--strongCyan);
+
+}
+
+.tip {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--grayishCyan);
+    justify-content: space-around;
+}
+
+.percentages {
+    width: 55%;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: left;
+    color: var(--white);
+}
+
+.percentages>* {
+    width: 20vw;
+    padding: .5rem 1rem;
+    border: 2px solid var(--veryDarkCyan);
+    border-radius: .5rem;
+    background-color: var(--veryDarkCyan);
+    font-weight: 700;
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.896);
+}
+
+.button_container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+
+}
+
+.btn {
+    color: var(--white);
+    max-width: 90px;
+
+
+}
+
+.button {
+    cursor: pointer;
+    width: auto;
+}
+
+/* Quando a tela tiver no máximo 760px de largura */
+@media (max-width: 760px) {
+    .button_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button_container>* {
+        flex-basis: 33%;
+        flex-grow: 1;
+        margin: 5px;
+    }
+}
+
+/* Quando a tela tiver pelo menos 761px de largura */
+@media (min-width: 761px) {
+    .button_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button_container>* {
+        flex-basis: auto;
+        flex-grow: 0;
+        margin: 5px;
+    }
+}
+
+/* Estilos para quando a tela for maior que 768px */
+.button_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+/* Estilos para quando a tela for menor que 768px */
+@media (max-width: 768px) {
+    .button_container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+}
+
+
+.percentages button:hover {
+    background-color: var(--strongCyan);
+    border-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+    border: 1px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.896);
+}
+
+.percent {
+    background-color: var(--veryLightGrayishCyan);
+    border: 2px solid var(--veryLightGrayishCyan);
+    color: var(--veryDarkCyan);
+    text-align: right;
+    outline: none;
+}
+
+.percent:hover,
+.percent:focus {
+    border-color: var(--strongCyan);
+}
+
+.percent::placeholder {
+    text-transform: capitalize;
+}
+
+.num_of_people_box {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .65rem;
+    width: 25rem;
+}
+
+.num_of_people_title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--grayishCyan);
+}
+
+.error {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.none {
+    display: none;
+}
+
+.box-results {
+    position: relative;
+    background-color: var(--veryDarkCyan);
+    padding: 3rem 1.5rem 0;
+    border-radius: 1rem;
+}
+
+.total {
+    width: 92vw;
+    display: flex;
+    margin-top: 60px;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    background-color: var(--veryDarkCyan);
+    border-radius: 10px;
+    height: 25rem;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+
+
+
+}
+
+.cima {
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.cima2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cima {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--strongCyan);
+}
+
+.cima2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--strongCyan);
+}
+
+.baixo2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.baixo {
+    text-align: center;
+}
+
+.baixo button {
+    width: 80%;
+}
+
+.baixo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--strongCyan);
+}
+
+.baixo2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--strongCyan);
+}
+
+
+.button-reset {
+    bottom: 3rem;
+    left: 1rem;
+    right: 1rem;
+    padding: .50rem 0;
+    border-radius: .3rem;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--veryDarkCyan);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: var(--strongCyan);
+    opacity: .4;
+    transition: all .2s ease-in-out;
+
+}
+
+.button-reset:hover {
+    opacity: 1;
+}
